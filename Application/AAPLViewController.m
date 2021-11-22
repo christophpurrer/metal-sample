@@ -46,11 +46,12 @@ Implementation of the cross-platform view controller
 
 - (void) execute {
     NSWindow* window = [[[NSApplication sharedApplication] windows] objectAtIndex:0];
-    double scaleFactor = 0.5 + ((double)arc4random() / UINT32_MAX);
+    double scaleFactorX = 0.5 + ((double)arc4random() / UINT32_MAX);
+    double scaleFactorY = 0.5 + ((double)arc4random() / UINT32_MAX);
     NSRect frame = [window frame];
     CGSize frameSize = frame.size;
-    frameSize.width *= scaleFactor;
-    frameSize.height *= scaleFactor;
+    frameSize.width *= scaleFactorX;
+    frameSize.height *= scaleFactorY;
     frameSize.width = MAX(frameSize.width, 400);
     frameSize.height = MAX(frameSize.height, 400);
     frameSize.width = MIN(frameSize.width, 900);
